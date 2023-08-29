@@ -2,7 +2,7 @@
 
 **Warning:** This code was already published in one of my previous repositories. I wanted to singlehandedly publish this, now it will be deployed.
 
-This is the first project from the Udemy course of Jonas Schmedtmann. I will use `create-react-app` in order to keep the project relevant — the original version is just vanilla CSS .
+This is the first project from the Udemy course of Jonas Schmedtmann. I will use Vite as bundler, in order to keep the project relevant — the original version is just vanilla CSS .
 
 - On the topside of the page, I intentionally didn't put exaggerated animations.
 
