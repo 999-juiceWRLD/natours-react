@@ -1,0 +1,95 @@
+@import "/src/assets/css/style.scss";
+
+.header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+    color: $color-white;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+
+    &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        animation-name: moveLeft;
+        /* 
+        animation-delay: 3s; starts animation 3 seconds later 
+        animation-iteration-count: 3; runs animation three times
+        */
+        animation-duration: 3s;
+
+        @include respond(phone) {
+            letter-spacing: 1rem;
+            font-family: 5rem;
+        }
+    }
+
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.5rem;
+        animation-name: moveRight;
+        animation-duration: 3s;
+
+        @include respond(phone) {
+            letter-spacing: 0.5rem;
+        }
+    }
+}
+
+@keyframes moveLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    /* 
+    80% {
+        transform: translateX(20px);
+    }
+    */
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/* 
+@keyframes identifier { } simply helps to control intermediate steps 
+in CSS animation sequence by defining styles for keyframes (or waypoints)
+along the animation sequence. this gives more control over the intermediate 
+steps of the animation sequence than transitions. the `from` is starting
+offset of 0% and `to` is ending offset of 100%.
+
+Example:
+
+@keyframes _ {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
+*/
+
+@keyframes moveRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}

@@ -1,0 +1,10 @@
+@import "../../../assets/css/style.scss";
+
+.stories {
+    background-color: $color-grey-light-1;
+    padding-bottom: 15rem;
+
+    .row {
+        flex-direction: column;
+    }
+}

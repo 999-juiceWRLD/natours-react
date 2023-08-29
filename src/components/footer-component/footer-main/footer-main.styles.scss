@@ -1,0 +1,28 @@
+@import "../../../assets/css/style.scss";
+
+.footer {
+    background-color: $color-grey-dark-3;
+    padding: 10rem 0;
+    font-size: 1.4rem;
+
+    &__logo-box {
+        text-align: center;
+        margin-bottom: 8rem;
+    }
+
+    &__logo {
+        height: 15rem;
+        width: auto;
+    }
+
+    .col-2-of-2 {
+
+        display: flex;
+
+        border-top: 1px solid $color-grey-light-1;
+        padding-top: 2rem;
+        a {
+            color: $color-grey-light-1;
+        }
+    }
+}

@@ -1,0 +1,175 @@
+@import "../../../assets/css/style.scss";
+
+.card {
+    
+    perspective: 150rem; // that makes the card turning seems real
+    -moz-perspective: 150rem;
+    text-align: left;
+    position: relative;
+    height: 52rem;
+
+    &__side {
+        height: 52rem;
+        transition: 0.8s all ease;
+        width: 33rem;
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 3px;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+        overflow: hidden;
+
+        @include respond(phone) {
+            width: 29rem;
+            height: 45rem;
+        }
+
+        @include respond(tab-port) {
+            width: 25rem;
+        }
+
+        // @include respond()
+
+        &--front {
+            background-color: $color-white;
+        }
+
+        &--back {
+            transform: rotateY(-180deg);
+
+            &-1 {
+                background-image: linear-gradient(to right bottom, $color-yellow-card-light, $color-yellow-card-dark);
+            }
+
+            &-2 {
+                background-image: linear-gradient(to right bottom, $light-green, $dark-green);
+            }
+
+            &-3 {
+                background-image: linear-gradient(to right bottom, $color-blue-card-light, $color-blue-card-dark);
+            }
+        }
+    }
+
+    &:hover &__side--front {
+        transform: rotateY(180deg);
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0);
+    }
+
+    &__picture {
+        background-size: cover;
+        height: 20rem;
+        background-blend-mode: screen;
+
+        &-1 {
+            background-image: linear-gradient(to right bottom, $color-yellow-card-light, $color-yellow-card-dark), 
+                              url("../../../assets/img/nat-5.jpg");
+        }
+
+        &-2 {
+            background-image: linear-gradient(to right bottom, $light-green, $dark-green), 
+                              url("../../../assets/img/nat-6.jpg");
+        }
+        &-3 {
+            background-image: linear-gradient(to right bottom, $color-blue-card-light, $color-blue-card-dark), 
+                              url("../../../assets/img/nat-7.jpg");
+        }
+    }
+
+    &__heading {
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: right;
+        color: $color-white;
+        position: absolute;
+        top: 12rem;
+        right: 2rem;
+        width: 75%;
+        line-height: 1;
+    }
+
+    &__heading-span {
+        &--1 {
+            background-image: linear-gradient(to right bottom, rgba($color-yellow-card-light, .85),
+                                              rgba($color-yellow-card-dark, .85));    
+        }
+
+        &--2 {
+            background-image: linear-gradient(to right bottom, rgba($light-green, .85),
+                                              rgba($dark-green, .85));
+        }
+
+        &--3 {
+            background-image: linear-gradient(to right bottom, rgba($color-blue-card-light, .85), 
+                                              rgba($color-blue-card-dark, .85))
+        }
+    }
+
+    &__details {
+        text-align: center;
+        margin-top: 3rem;
+        ul {
+            list-style: none;
+            margin: auto 20%;
+            li {
+                font-size: 1.5rem;
+                padding: 1rem;
+                text-align: center;
+                
+                &:first-child {
+                    padding-top: 2.2rem;
+                }
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid $color-grey-light-2;
+                    border-bottom-width: thin;
+                }
+            }
+        }
+
+        @include respond(phone) {
+            margin-top: 0;
+            ul {
+                li {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        @include respond(tab-port) {
+            ul {
+                margin: auto 15%;
+            }
+        }
+    }
+
+    &__cta {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+    }
+
+    &__price-box {
+        text-align: center;
+        color: $color-white;
+        margin-top: 4rem;
+        margin-bottom: 8rem;
+    }
+
+    &__price-only {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+
+    &__price-value {
+        font-size: 6rem;
+        font-weight: 100;
+    }
+}

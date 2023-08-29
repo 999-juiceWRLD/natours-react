@@ -1,0 +1,81 @@
+// COLORS
+
+$light-green: #7ed56f;
+$medium-green: #55c57a;
+$dark-green: #28b485;
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+$color-grey-dark: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+$color-white: #fff;
+$color-yellow-card-light: #ffb900;
+$color-yellow-card-dark: #ff7730;
+$color-blue-card-light: #2998ff;
+$color-blue-card-dark: #5643fa;
+$color-black: #000;
+
+// FONT
+
+$default-font-size: 1.6rem;
+
+// GRID
+
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-horizontal: 6rem;
+
+@import "./media-queries.mixins.scss";
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    /* 
+    box-sizing: border-box; changes the box model so that the borders and the 
+    paddings are no longer added to the total width or the total height.
+    */
+  }
+
+  html {
+    // this defines what 1rem is, 10px / 16px = 62.5px
+    font-size: 62.5%; /* default font size = 16px and 10 / 16 = 0.625 */
+    
+    @include respond(big) {
+      font-size: 75%; // 1rem = 12px / 16px = 75%
+    }
+    @include respond(tab-land) {
+      font-size: 56.25%; // 1rem = 9px / 16px = 50%
+    }
+    @include respond(tab-port) {
+      font-size: 50%; // 1rem = 8px / 16px
+    }
+    @include respond(phone) {
+      font-size: 30%; // 1rem = 4.8px / 16px
+    }
+  }
+  
+  body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: $default-font-size;
+    line-height: 1.7;
+    color: $color-grey-dark;
+    padding: 3rem;
+    box-sizing: border-box;
+
+    @include respond(tab-port) {
+      padding: 0;
+    }
+  }
+  
+.u-center-text { text-align: center !important; }
+
+.u-margin-bottom-small { margin-bottom: 1.5rem !important; }
+.u-margin-bottom-medium { margin-bottom: 4rem !important; }
+.u-margin-bottom-big { margin-bottom: 8rem !important; }
+
+.u-margin-top-big { margin-top: 8rem !important; }
+.u-margin-top-huge { margin-top: 10rem !important; }

@@ -1,0 +1,41 @@
+@import "../../../assets/css/style.scss";
+
+.footer {
+    
+    &__navigation {
+        border-top: 1px solid $color-grey-light-2;
+        padding-top: 2rem;
+    }
+
+    &__list {
+        list-style: none;
+    }
+
+    &__item {
+        display: inline-block;
+        &:not(:last-child) {
+            margin-right: 1.5rem;
+        }
+    }
+
+    &__link {
+
+        transition: all 0.5s;
+
+        &:link,
+        &:visited {
+            color: $color-grey-light-1;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+
+        &:hover,
+        &:active {
+            color: $light-green;
+            box-shadow: 0 1rem 2rem rgba($color-black, .4);
+            background-color: $color-grey-dark;
+            padding: 1rem 2rem;
+        }
+    }
+}
